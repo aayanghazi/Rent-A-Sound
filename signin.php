@@ -1,0 +1,248 @@
+<?php session_start(); ?>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+    <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="pngs/png1.png" type="image/png">
+</head>
+  <style>
+    * {
+    font-family: Montserrat;
+    color: #fff;
+  }
+  
+  body{
+    background: #331f13;
+    background: color(#52301c);
+  }
+  
+  @media screen and (max-width: 480px) {
+    * {
+      overflow-x: hidden;
+    }
+  }
+  
+  body {
+    overflow-x: hidden;
+    background-image: url("./background/bg1.png");
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+  }
+  
+  .main-section {
+    margin: 0 auto !important;
+    max-width: 900px;
+    width: 100%;
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+  }
+  
+  .detail-section {
+    background: #52301c;
+    background: #764626;
+    border-radius: 45px;
+  }
+  
+  .form-section {
+    background: rgb(0, 0, 0);
+    background: linear-gradient(90deg, rgb(0, 0, 0) 0%, rgb(0, 0, 0) 50%, rgb(0, 0, 0) 100%);
+    border-radius: 45px;
+  }
+  
+  .information {
+    margin: 50px 45px;
+  }
+  
+  .form-conatiner {
+    margin: 40px 45px;
+  }
+
+  .form-conatiner h2 {
+    white-space: nowrap !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 0px;
+    margin-left: 0 !important;
+    padding-left: 0 !important;
+  }
+
+  .form-conatiner h2 img {
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+  
+  .heading__h2 {
+    font-weight: 700;
+  }
+  
+  .heading__h3 {
+    text-align: center;
+    font-size: 1.2em;
+    font-weight: 700;
+  }
+  
+  .little-info {
+    margin: 20px 50px 8px 50px;
+  }
+  
+  .heading_h2_1 {
+    font-weight: 700;
+    font-size: 1.4em;
+  }
+  
+  .little-info li {
+    margin: 10px 0;
+    font-weight: 700;
+  }
+  
+  .links__p {
+    font-size: 1.2em;
+  }
+  
+  .links__p a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: 500;
+  }
+  
+  label {
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: 0.07em;
+  }
+  
+  input[type=text], input[type=password] {
+    border: none;
+    margin: auto auto 15px auto;
+    min-width: 100%;
+    background: transparent;
+    color: #fff;
+    border-bottom: 2px solid #fff;
+  }
+  
+  .button {
+    border-radius: 16px;
+    padding: 4px 12px;
+    background: #fff;
+    background-color: #764626;
+    font-size: 1.1em;
+    font-weight: 600;
+    box-shadow: 0;
+    border: 0;
+    color: #000000;
+  }
+  </style>
+  <body>
+    <div class="fluid-container">
+      <div class="container">
+        <div class="col-lg-12 row main-section animated jackInTheBox">
+          <div class="col-lg-5 detail-section">
+            <div class="information">
+                <h2>CREATE A NEW ACCOUNT</h2>
+                <br>
+              <h3 class="heading__h3"></h3>
+              <div class="little-info">
+                <h3>BENEFITS</h3>
+              
+                <li style="color: rgb(255, 255, 255);">Rent any instrument</li>
+                <li style="color: rgb(255, 255, 255);">Affordable rates</li>
+                <li style="color: rgb(255, 255, 255);">Wide variety</li>
+                <li style="color: rgb(255, 255, 255);">Versatile packages</li>
+                <li style="color: rgb(255, 255, 255);">Bulk booking</li>
+                <li style="color: rgb(255, 255, 255);">Long term plans</li>
+                <span style="font-size:0.85em;"></span>
+                <br>
+                <span style="font-size:0.85em;"></span>
+              </div>
+              <p style="font-size:0.6em; margin:0 auto; padding:0;"></p>
+            </div>
+          </div>
+          <div class="col-lg-7 form-section">
+            <div class="form-conatiner">
+                <h2><img src="./pngs/png1.png" alt="Your Logo" style="width: 170px; height: 170px;" style="height: 1.5em;"> RENT A SOUND</h2>
+                <br><br>
+                <form action="" method="POST">
+                  <label for="name">NAME</label>
+                  <input type="text" id="name" name="name" placeholder="Enter your name">
+                  <label for="email">EMAIL</label>
+                  <br>
+                  <input type="text" id="email" name="email" placeholder="Enter your email address">
+                  <br>
+                  <label for="password">PASSWORD</label>
+                  <br>
+                  <input type="password" id="password" name="password" placeholder="Set a strong password">
+                  <br>
+                  <br>
+                  <input type="checkbox" id="checbox">
+                  <label for="checbox">I agree to the </b><a href="#">Terms and Conditions</a></label>
+                  <br><br>
+                  <center><button class="button" type="submit" name="submit1">Sign Up</button></center>
+                </form>
+              </div>
+          </div>
+        </div>
+        <?php
+        if (isset($_POST['submit1'])) {
+            $user = $_POST['name'];
+            $email = $_POST['email'];
+            $pass = $_POST['password'];
+    
+            $conn = mysqli_connect("localhost", "root", "", "rentasound",4306);
+    
+            if (!$conn) {
+                echo "<script>";
+                echo "alert('Couldn\\'t Connect to database');";
+                echo "</script>";
+                die("Failed to connect: " . mysqli_connect_error());
+            }
+            else {
+                $select_e = $conn->prepare("SELECT * FROM logsign WHERE Email = ?");
+                $select_e->bind_param("s", $email);
+                $select_e->execute();
+                $select_e_result = $select_e->get_result();
+                $data_e = $select_e_result->fetch_all(MYSQLI_ASSOC);
+                
+                $select_u = $conn->prepare("SELECT * FROM logsign WHERE Name = ?");
+                $select_u->bind_param("s", $user);
+                $select_u->execute();
+                $select_u_result = $select_u->get_result();
+                $data_u = $select_u_result->fetch_all(MYSQLI_ASSOC);
+                
+                if (!empty($data_e) || !empty($data_u)) {
+                    echo "<script>";
+                    echo "alert('This E-mail or Username is already registered');";
+                    echo "window.location.href = 'signin.php';";
+                    echo "</script>";
+                } 
+                else {
+                    $hashed_pass = password_hash($pass, PASSWORD_DEFAULT);
+                    $insert = $conn->prepare("INSERT INTO logsign (Name, Email, Password) VALUES (?, ?, ?)");
+                    $insert->bind_param("sss", $user, $email, $hashed_pass);
+                    if ($insert->execute()) {
+                        $conn->commit();
+                        $_SESSION['user-website'] = $user;
+                        echo "<script>";
+                        echo "alert('Successfully Registered & Logged In');";
+                        echo "window.location.href = 'index.php';";
+                        echo "</script>";
+                    } else {
+                        echo "<script>";
+                        echo "alert('Error, Try again');";
+                        echo "window.location.href = 'signin.php';";
+                        echo "</script>";
+                    }
+                }
+            }
+        } 
+        ?>
+  </body>
+  </html>
