@@ -1,4 +1,4 @@
-<?php session_start(); ?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -182,48 +182,11 @@
                   
                   <center><button class="button" type="submit" name="submit">Login</button></center>
                   <br>
-                    <label for="text">Don't have an account? <a href="http://localhost/website/signin.php">Sign up</a></label>
+                    <label for="text">Don't have an account? <a href="http://localhost/website/signin.html">Sign up</a></label>
                 </form>
               </div>
           </div>
         </div>
-    <?php
-    if (isset($_POST['submit'])) {
-      $email1 = $_POST['email'];
-      $password = $_POST['password'];
-      $conn = new mysqli("localhost", "root", "", "rentasound",4306);
-      if (!$conn) {
-          die("Failed to connect: " . mysqli_connect_error());
-      } 
-      else {
-          $select = $conn->prepare("SELECT * from logsign where Email = ?");
-          $select->bind_param("s", $email1);
-          $select->execute();
-          $select_result = $select->get_result();
-          $data = $select_result->fetch_all(MYSQLI_ASSOC);
-          if (!empty($data)) {
-              if (password_verify($password, $data[0]['Password'])) {
-                  $_SESSION['user-website'] = $data[0]['Name'];
-                  echo "<script>";
-                  echo "alert('Successfully Logged In');";
-                  echo "window.location.href = 'index.php';";
-                  echo "</script>";
-              } 
-              else {
-                  echo "<script>";
-                  echo "alert('Wrong Password');";
-                  echo "window.location.href = 'loginpage.php';";
-                  echo "</script>";
-              }
-          } 
-          else {
-              echo "<script>";
-              echo "alert('This E-mail is not registered');";
-              echo "window.location.href = 'loginpage.php';";
-              echo "</script>";
-          }
-      }
-  }
-  ?>
+    
   </body>
   </html>

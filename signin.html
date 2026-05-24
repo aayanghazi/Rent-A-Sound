@@ -1,4 +1,4 @@
-<?php session_start(); ?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -190,59 +190,6 @@
               </div>
           </div>
         </div>
-        <?php
-        if (isset($_POST['submit1'])) {
-            $user = $_POST['name'];
-            $email = $_POST['email'];
-            $pass = $_POST['password'];
-    
-            $conn = mysqli_connect("localhost", "root", "", "rentasound",4306);
-    
-            if (!$conn) {
-                echo "<script>";
-                echo "alert('Couldn\\'t Connect to database');";
-                echo "</script>";
-                die("Failed to connect: " . mysqli_connect_error());
-            }
-            else {
-                $select_e = $conn->prepare("SELECT * FROM logsign WHERE Email = ?");
-                $select_e->bind_param("s", $email);
-                $select_e->execute();
-                $select_e_result = $select_e->get_result();
-                $data_e = $select_e_result->fetch_all(MYSQLI_ASSOC);
-                
-                $select_u = $conn->prepare("SELECT * FROM logsign WHERE Name = ?");
-                $select_u->bind_param("s", $user);
-                $select_u->execute();
-                $select_u_result = $select_u->get_result();
-                $data_u = $select_u_result->fetch_all(MYSQLI_ASSOC);
-                
-                if (!empty($data_e) || !empty($data_u)) {
-                    echo "<script>";
-                    echo "alert('This E-mail or Username is already registered');";
-                    echo "window.location.href = 'signin.php';";
-                    echo "</script>";
-                } 
-                else {
-                    $hashed_pass = password_hash($pass, PASSWORD_DEFAULT);
-                    $insert = $conn->prepare("INSERT INTO logsign (Name, Email, Password) VALUES (?, ?, ?)");
-                    $insert->bind_param("sss", $user, $email, $hashed_pass);
-                    if ($insert->execute()) {
-                        $conn->commit();
-                        $_SESSION['user-website'] = $user;
-                        echo "<script>";
-                        echo "alert('Successfully Registered & Logged In');";
-                        echo "window.location.href = 'index.php';";
-                        echo "</script>";
-                    } else {
-                        echo "<script>";
-                        echo "alert('Error, Try again');";
-                        echo "window.location.href = 'signin.php';";
-                        echo "</script>";
-                    }
-                }
-            }
-        } 
-        ?>
+        
   </body>
   </html>

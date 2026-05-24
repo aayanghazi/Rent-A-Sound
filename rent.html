@@ -74,7 +74,7 @@
                     <div class="nav_bar d-flex justify-content-center">
                         <ul class="nav">
                             <li class="nav-item">
-                                <a class="nav-link " href="index.php">HOME</a>
+                                <a class="nav-link " href="index.html">HOME</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="./navOptions/About Us.html">ABOUT US</a>
@@ -86,7 +86,7 @@
                                 <a class="nav-link" href="./navOptions/Testimonial.html">TESTIMONIAL</a>
                             </li>
                             <li class="nav-item">
-                                <a class="active nav-link" href="http://localhost/website/rent.php">RENT OUT</a>
+                                <a class="active nav-link" href="http://localhost/website/rent.html">RENT OUT</a>
                             </li>
                         </ul>
                     </div>
@@ -99,7 +99,7 @@
                     </div>
                     <div id="mySidenav" class="sidenav">
                         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-                        <a class="active" href="index.php">HOME</a>
+                        <a class="active" href="index.html">HOME</a>
                         <a href="./navOptions/About Us.html">ABOUT US</a>
                         <a href="./navOptions/Rental Services.html">RENTAL SERVICES</a>
                         <a href="./navOptions/Testimonial.html">TESTIMONIAL</a>
@@ -215,7 +215,7 @@
                         <h2>Rent Your Instrument</h2>
 
                         <div class="form_page">
-                        <form action="<?php echo $_SERVER["PHP_SELF"]; ?>" method="POST" enctype="multipart/form-data">
+                        <form action="" method="POST" enctype="multipart/form-data">
                                 <div class="row gap-xxl-5 mb-4 gap-2">
                                     <div class="col-lg mb-4 mb-lg-0">
                                         <input type="text" id="iname" name="iname" class="form-control" placeholder="Instrument Name">
@@ -271,7 +271,7 @@
                             <div class="nav_bar d-flex justify-content-center align-items-center">
                                 <ul class="nav">
                                     <li class="nav-item">
-                                        <a class="nav-link" href="index.php">HOME</a>
+                                        <a class="nav-link" href="index.html">HOME</a>
                                     </li>
                                     <li class="nav-item">
                                         <a class="nav-link" href="./navOptions/About Us.html">ABOUT US</a>
@@ -385,62 +385,6 @@
 
     <script src="js/java.js"></script>
 
-    <?php
-$count = 0;
-$count1 = 0;
-if (isset($_POST['submit1'])){
-    $iname = $_POST['iname'];
-    $phone = $_POST['pnumber'];
-    $icond = $_POST['icondition'];
-    $price = $_POST['price'];
-    $adres = $_POST['address'];
-
-    if (empty($iname) || empty($phone) || empty($icond) || empty($price) || empty($adres)) {
-        echo "<script>";
-        echo "alert('Please fill in all the fields');";
-        echo "</script>";
-    } else {
-        $conn = mysqli_connect("localhost", "root", "", "rentasound",4306);
-
-
-        if (!$conn) {
-            echo "<script>";
-            echo "alert('Couldn't Connect to database')";
-            echo "</script>";
-            die("Failed to connect: " . mysqli_connect_error());
-        } else {
-            $select_e = $conn->prepare("SELECT * FROM rent WHERE PhoneNo = ?");
-            $select_e->bind_param("s", $phone);
-            $select_e->execute();
-            $select_e_result = $select_e->get_result();
-            $data_e = $select_e_result->fetch_all(MYSQLI_ASSOC);
-            $select_u = $conn->prepare("SELECT * FROM rent WHERE Iname = ?");
-            $select_u->bind_param("s", $iname);
-            $select_u->execute();
-            $select_u_result = $select_u->get_result();
-            $data_u = $select_u_result->fetch_all(MYSQLI_ASSOC);
-            if (!empty($data_e) || !empty($data_u)){
-                echo "<script>";
-                echo "alert('This PhoneNo or Instrument Name is already taken');";
-                echo "</script>";
-            } 
-            else {
-                $insert = $conn->prepare("INSERT INTO rent (Iname, PhoneNo, Icondition, Price, Address) VALUES (?, ?, ?, ?, ?)");
-                $insert->bind_param("sssss", $iname, $phone, $icond, $price, $adres);
-                if ($insert->execute()) {
-                    $conn->commit();
-                    echo "<script>";
-                    echo "alert('Instrument Details Uploaded');";
-                    echo "</script>";
-                } else {
-                    echo "<script>";
-                    echo "alert('Error, Try again');";
-                    echo "</script>";
-                }
-            }
-        }
-    }
-}
-?>
+    
 </body>
 </html>

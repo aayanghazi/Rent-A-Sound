@@ -1,12 +1,4 @@
-<?php
-session_start();
-if (!isset($_SESSION['user-website'])) {
-    header('Location: start.html');
-    exit();
-}
-header('Cache-Control: no-store, no-cache, must-revalidate, max-age=0');
-header('Pragma: no-cache');
-?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -82,7 +74,7 @@ header('Pragma: no-cache');
                     <div class="nav_bar d-flex justify-content-center">
                         <ul class="nav">
                             <li class="nav-item">
-                                <a class="nav-link active" href="index.php">HOME</a>
+                                <a class="nav-link active" href="index.html">HOME</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="./navOptions/About Us.html">ABOUT US</a>
@@ -94,7 +86,7 @@ header('Pragma: no-cache');
                                 <a class="nav-link" href="./navOptions/Testimonial.html">TESTIMONIAL</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="http://localhost/website/rent.php">RENT OUT</a>
+                                <a class="nav-link" href="http://localhost/website/rent.html">RENT OUT</a>
                             </li>
                         </ul>
                     </div>
@@ -107,12 +99,12 @@ header('Pragma: no-cache');
                     </div>
                     <div id="mySidenav" class="sidenav">
                         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-                        <a class="active" href="index.php">HOME</a>
+                        <a class="active" href="index.html">HOME</a>
                         <a href="./navOptions/About Us.html">ABOUT US</a>
                         <a href="./navOptions/Rental Services.html">RENTAL SERVICES</a>
                         <a href="./navOptions/Testimonial.html">TESTIMONIAL</a>
                         <a href="./navOptions/Contact Us.html"><button type="button" class="btn">CONTACT US</button></a>
-                        <a href="./logout.php"><button type="button" class="btn">LOG OUT</button></a>
+                        <a href="./logout.html"><button type="button" class="btn">LOG OUT</button></a>
                     </div>
                     <div class="wrapper">
                         <div class="button-wrapper">
@@ -120,7 +112,7 @@ header('Pragma: no-cache');
                             <div class="btn2"></div>
                         </div>
                         <div class="button-wrapper">
-                            <a href="./logout.php"><button type="button">LOG OUT</button></a>
+                            <a href="./logout.html"><button type="button">LOG OUT</button></a>
                             <div class="btn2"></div>
                         </div>
                 </div>
@@ -500,7 +492,7 @@ Our rental process is simple and convenient, allowing you to focus on what matte
                         <h2>FEEDBACK</h2>
 
                         <div class="form_page">
-                            <form action="/action_page.php">
+                            <form action="/action_page.html">
                                 <div class="row gap-xxl-5 mb-4 gap-2">
                                     <div class="col-lg mb-4 mb-lg-0">
                                         <input type="text" class="form-control" placeholder="Your Name">
@@ -750,7 +742,7 @@ Our rental process is simple and convenient, allowing you to focus on what matte
                             <div class="nav_bar d-flex justify-content-center align-items-center">
                                 <ul class="nav">
                                     <li class="nav-item">
-                                        <a class="nav-link" href="index.php">HOME</a>
+                                        <a class="nav-link" href="index.html">HOME</a>
                                     </li>
                                     <li class="nav-item">
                                         <a class="nav-link" href="./navOptions/About Us.html">ABOUT US</a>
