@@ -1,5 +1,7 @@
 # Rent A Sound
 
+Created This Project in First Semester.
+
 Rent A Sound is a website that allows musicians to rent musical instruments for daily use. It also functions as a platform where people can list their own instruments to rent out to others, making it a complete rental marketplace. I built this project to learn how to manage user data, process payments, and keep a website secure.
 
 ### Main Features
